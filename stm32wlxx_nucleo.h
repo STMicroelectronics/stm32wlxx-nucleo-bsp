@@ -28,12 +28,8 @@
 #include "stm32wlxx_nucleo_errno.h"
 #include "stm32wlxx_nucleo_conf.h"
    
-#if (USE_BSP_COM_FEATURE > 0)
-  #if (USE_COM_LOG > 0)
-    #ifndef __GNUC__
-      #include "stdio.h"
-    #endif
-  #endif
+#if (USE_BSP_COM_FEATURE == 1)
+#include "stdio.h"
 #endif
    
 /** @addtogroup BSP
@@ -145,9 +141,9 @@ typedef enum
   * @brief STM32WLXX NUCLEO BSP Driver version number
   */
 #define __STM32WLXX_NUCLEO_BSP_VERSION_MAIN   (0x01U) /*!< [31:24] main version */
-#define __STM32WLXX_NUCLEO_BSP_VERSION_SUB1   (0x02U) /*!< [23:16] sub1 version */
-#define __STM32WLXX_NUCLEO_BSP_VERSION_SUB2   (0x00U) /*!< [15:8]  sub2 version */
-#define __STM32WLXX_NUCLEO_BSP_VERSION_RC     (0x00U) /*!< [7:0]  release candidate */ 
+#define __STM32WLXX_NUCLEO_BSP_VERSION_SUB1   (0x03U) /*!< [23:16] sub1 version */
+#define __STM32WLXX_NUCLEO_BSP_VERSION_SUB2   (0x01U) /*!< [15:8]  sub2 version */
+#define __STM32WLXX_NUCLEO_BSP_VERSION_RC     (0x00U) /*!< [7:0]  release candidate */
 #define __STM32WLXX_NUCLEO_BSP_VERSION        ((__STM32WLXX_NUCLEO_BSP_VERSION_MAIN << 24)\
                                               |(__STM32WLXX_NUCLEO_BSP_VERSION_SUB1 << 16)\
                                               |(__STM32WLXX_NUCLEO_BSP_VERSION_SUB2 << 8 )\
